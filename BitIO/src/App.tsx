@@ -11,12 +11,14 @@ const App = () => {
     </Draggable>
   );
   return (
-    <DndContext onDragEnd={handleDragEnd}>
-      {!parent ? draggable : null}
-      <Droppable id="droppable">
-        {parent === "droppable" ? draggable : 'Drop here'}
-      </Droppable>
-    </DndContext>
+    <>
+      <DndContext onDragEnd={handleDragEnd}>
+        {!parent ? draggable : null}
+        <Droppable id="droppable">
+          {parent === "droppable" ? draggable : 'Drop here'}
+        </Droppable>
+      </DndContext>
+    </>
   )
 
   function handleDragEnd({ over }: any) {
